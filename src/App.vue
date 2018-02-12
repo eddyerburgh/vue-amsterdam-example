@@ -1,22 +1,31 @@
 <template>
   <div id="app">
-    <Counter />
-    <CounterWithVuex/>
-    <LeakyBucket />
+    <modal-component
+      :visible="displayModal"
+      :close="closeModal"
+    >
+      Hello, World!
+    </modal-component>
   </div>
 </template>
 
 <script>
-import CounterWithVuex from './components/CounterWithVuex'
-import Counter from './components/Counter'
-import LeakyBucket from './components/LeakyBucket'
+import ModalComponent from './components/Modal'
 
 export default {
   name: 'app',
   components: {
-    CounterWithVuex,
-    Counter,
-    LeakyBucket
+    ModalComponent
+  },
+  data () {
+    return {
+      displayModal: true
+    }
+  },
+  methods: {
+    closeModal () {
+      this.displayModal = false
+    }
   }
 }
 </script>

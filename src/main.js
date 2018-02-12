@@ -5,6 +5,8 @@ import App from './App'
 import Vuex from 'vuex'
 import VueResource from 'vue-resource'
 import storeConfig from './store/store-config'
+import 'bulma/css/bulma.css'
+
 Vue.config.productionTip = false
 
 Vue.use(Vuex)
