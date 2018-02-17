@@ -1,12 +1,13 @@
 <template>
   <div v-if="visible" class="modal is-active">
     <div class="modal-background"></div>
-    <div class="modal-content">
+    <div class="modal-contents">
       <div class="box">
         <button
-          @click="close"
+          @click="onClose"
           class="delete"
-          aria-label="close"></button>
+          aria-label="close">
+        </button>
         <slot />
         </div>
       </div>
@@ -16,6 +17,6 @@
 
 <script>
 export default {
-  props: ['visible', 'close']
+  props: ['visible', 'onClose']
 }
 </script>

@@ -1,4 +1,4 @@
-import Modal from '@/components/Modal.vue'
+import Modal from '../../../src/components/Modal.vue'
 import { mount } from '@vue/test-utils'
 
 test('does not render when not passed visible prop', () => {
@@ -25,4 +25,16 @@ test('calls onClose when button is clicked', () => {
   })
   wrapper.find('button').trigger('click')
   expect(onClose).toHaveBeenCalled()
+})
+
+test('renders correctly', () => {
+  const wrapper = mount(Modal, {
+    propsData: {
+      visible: true
+    },
+    slots: {
+      default: '<p>some content</p>'
+    }
+  })
+  expect(wrapper.html()).toMatchSnapshot()
 })
